@@ -23,5 +23,9 @@ app.use('/users', usersRoute);
 const questionsRoute = require('./routes/questions');
 app.use('/questions', questionsRoute);
 
+const examsRoute = require('./routes/exams');
+app.use('/exams', examsRoute);
+
+
 
 app.listen(4000);

@@ -6,9 +6,13 @@ const db = require('../db');
 
 //http://localhost:4000/users/allusers
 router.get('/allusers', async(req, res) => {
+    // if data available in cache mem
+    // return data
+    // else
     try{
         const response = await db.promise().query('SELECT * FROM users');
         //console.log(response[0]);
+        //store in cache memory for 10 min
         res.status(200).json(response[0]);
     }
     catch(err){
